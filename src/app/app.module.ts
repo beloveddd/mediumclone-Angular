@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
 import { PersistenceService } from './shared/services/persistence.service';
 import { AuthInterceptor } from './shared/services/authInterceptor.service';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { AuthInterceptor } from './shared/services/authInterceptor.service';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    GlobalFeedModule,
     HttpClientModule,
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({
