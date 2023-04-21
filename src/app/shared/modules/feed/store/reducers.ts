@@ -6,6 +6,7 @@ import {
   getFeedFailureAction,
   getFeedSuccessAction,
 } from './actions/getFeed.action';
+import { routerNavigationAction } from '@ngrx/router-store';
 
 const initialState: FeedStateInterface = {
   isLoading: false,
@@ -36,7 +37,8 @@ const feedReducer = createReducer(
       ...state,
       isLoading: false,
     })
-  )
+  ),
+  on(routerNavigationAction, (): FeedStateInterface => initialState)
 );
 
 export function reducer(state: FeedStateInterface, action: Action) {

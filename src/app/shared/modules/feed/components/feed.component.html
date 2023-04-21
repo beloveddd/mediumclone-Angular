@@ -3,6 +3,12 @@
 <mc-error-message *ngIf="error$ | async"></mc-error-message>
 
 <div *ngIf="feed$ | async">
+  <mc-pagination
+    [total]="(feed$ | async)?.articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+  ></mc-pagination>
   <div
     class="article-preview"
     *ngFor="let article of (feed$ | async)?.articles"
