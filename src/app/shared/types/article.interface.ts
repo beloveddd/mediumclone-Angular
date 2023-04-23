@@ -7,7 +7,7 @@ export interface ArticleInterface {
   description: string;
   favorited: boolean;
   favoritesCount: number;
-  slug: string;
+  slug: string | null;
   tagList: string[];
   title: string;
   updatedAt: string;
