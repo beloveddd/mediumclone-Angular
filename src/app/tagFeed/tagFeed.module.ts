@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { GlobalFeedComponent } from './components/globalFeed.component';
+import { TagFeedComponent } from './components/tagFeed.component';
 import { FeedModule } from '../shared/modules/feed/feed.module';
 import { BannerModule } from '../shared/modules/banner/banner.module';
 import { PopularTagsModule } from '../shared/modules/popularTags/popularTags.module';
@@ -10,8 +10,8 @@ import { FeedToggleModule } from '../shared/modules/feedToggle/feedToggle.module
 
 const routes: Routes = [
   {
-    path: '',
-    component: GlobalFeedComponent,
+    path: 'tags/:slug',
+    component: TagFeedComponent,
   },
 ];
 @NgModule({
@@ -23,6 +23,6 @@ const routes: Routes = [
     PopularTagsModule,
     FeedToggleModule,
   ],
-  declarations: [GlobalFeedComponent],
+  declarations: [TagFeedComponent],
 })
-export class GlobalFeedModule {}
+export class TagFeedModule {}
